@@ -1,4 +1,4 @@
-import { pool } from "../index.js"; // Assuming index.js is in the same directory
+import { pool } from "./config.js"; // Assuming index.js is in the same directory
 
 async function seedGuests() {
   try {
