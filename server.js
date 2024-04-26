@@ -1,6 +1,3 @@
-//Import helper functions
-import { getGuests } from "./src/routes/getGuests.js";
-
 //Import the required modules
 import express from "express";
 //Initialose the express app
@@ -12,6 +9,9 @@ dotenv.config();
 const PORT = process.env.PORT;
 // use express.joson() middleware to parse incoming JSON requests
 app.use(express.json());
+
+//Import helper functions
+import { getGuests } from "./src/routes/getGuests.js";
 
 // ROUTE HANDLERS
 
