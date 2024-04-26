@@ -12,6 +12,7 @@ app.use(express.json());
 
 //Import helper functions
 import { getGuests } from "./src/routes/getGuests.js";
+import { addGuest } from "./src/routes/addGuest.js";
 
 // ROUTE HANDLERS
 
