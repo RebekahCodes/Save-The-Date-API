@@ -1,12 +1,14 @@
-import pool from "./pool.js";
+import { pool } from "./pool.js";
+
+import crypto from "crypto";
 
 async function seedGuests() {
   try {
     // Create the guests table (if it doesn't exist)
-    await pool.query(`
-      CREATE TABLE IF NOT EXISTS guests (
+    await pool.query(` 
+    CREATE TABLE IF NOT EXISTS guests (
         id SERIAL PRIMARY KEY, 
-        household_id INT,
+        household_id VARCHAR(255) NOT NULL,
         first_name VARCHAR(255) NOT NULL,
         last_name VARCHAR(255) NOT NULL,
         email VARCHAR(255), 
@@ -21,7 +23,7 @@ async function seedGuests() {
     const dummyGuests = [
       // Your array of guest objects with name, email, etc. (replace with your actual data)
       {
-        household_id: 1,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "John",
         last_name: "Doe",
         email: "john.doe@example.com",
@@ -32,7 +34,7 @@ async function seedGuests() {
         accommodation: "Yes",
       },
       {
-        household_id: 1,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Jane",
         last_name: "Smith",
         email: "jane.smith@example.com",
@@ -43,7 +45,7 @@ async function seedGuests() {
         accommodation: "Yes",
       },
       {
-        household_id: 2,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Alice",
         last_name: "Johnson",
         email: "alice.johnson@example.com",
@@ -54,7 +56,7 @@ async function seedGuests() {
         accommodation: "Yes",
       },
       {
-        household_id: 3,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Bob",
         last_name: "Williams",
         email: "bob.williams@example.com",
@@ -65,7 +67,7 @@ async function seedGuests() {
         accommodation: "No",
       },
       {
-        household_id: 3,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Eve",
         last_name: "Jackson",
         email: "eve.jackson@example.com",
@@ -76,7 +78,7 @@ async function seedGuests() {
         accommodation: "No",
       },
       {
-        household_id: 4,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Michael",
         last_name: "Brown",
         email: "michael.brown@example.com",
@@ -87,7 +89,7 @@ async function seedGuests() {
         accommodation: "Yes",
       },
       {
-        household_id: 5,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Emily",
         last_name: "Miller",
         email: "emily.miller@example.com",
@@ -98,7 +100,7 @@ async function seedGuests() {
         accommodation: "No",
       },
       {
-        household_id: 6,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "David",
         last_name: "Wilson",
         email: "david.wilson@example.com",
@@ -109,7 +111,7 @@ async function seedGuests() {
         accommodation: "No",
       },
       {
-        household_id: 7,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Sarah",
         last_name: "Moore",
         email: "sarah.moore@example.com",
@@ -120,7 +122,7 @@ async function seedGuests() {
         accommodation: "Yes",
       },
       {
-        household_id: 8,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Matthew",
         last_name: "Taylor",
         email: "matthew.taylor@example.com",
@@ -131,7 +133,7 @@ async function seedGuests() {
         accommodation: "No",
       },
       {
-        household_id: 8,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Emma",
         last_name: "Anderson",
         email: "emma.anderson@example.com",
@@ -142,7 +144,7 @@ async function seedGuests() {
         accommodation: "No",
       },
       {
-        household_id: 9,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "James",
         last_name: "Thompson",
         email: "james.thompson@example.com",
@@ -153,7 +155,7 @@ async function seedGuests() {
         accommodation: "Yes",
       },
       {
-        household_id: 10,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Sophia",
         last_name: "Thomas",
         email: "sophia.thomas@example.com",
@@ -164,7 +166,7 @@ async function seedGuests() {
         accommodation: "No",
       },
       {
-        household_id: 11,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "William",
         last_name: "Jackson",
         email: "william.jackson@example.com",
@@ -175,7 +177,7 @@ async function seedGuests() {
         accommodation: "Yes",
       },
       {
-        household_id: 12,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Olivia",
         last_name: "White",
         email: "olivia.white@example.com",
@@ -186,7 +188,7 @@ async function seedGuests() {
         accommodation: "No",
       },
       {
-        household_id: 13,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Sophie",
         last_name: "Lee",
         email: "sophie.lee@example.com",
@@ -197,7 +199,7 @@ async function seedGuests() {
         accommodation: "Yes",
       },
       {
-        household_id: 13,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Ryan",
         last_name: "Nguyen",
         email: "ryan.nguyen@example.com",
@@ -208,7 +210,7 @@ async function seedGuests() {
         accommodation: "No",
       },
       {
-        household_id: 14,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Emma",
         last_name: "Garcia",
         email: "emma.garcia@example.com",
@@ -219,7 +221,7 @@ async function seedGuests() {
         accommodation: "Yes",
       },
       {
-        household_id: 15,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Liam",
         last_name: "Martinez",
         email: "liam.martinez@example.com",
@@ -230,7 +232,7 @@ async function seedGuests() {
         accommodation: "No",
       },
       {
-        household_id: 15,
+        household_id: crypto.randomUUID({ type: "v4" }),
         first_name: "Ava",
         last_name: "Hernandez",
         email: "ava.hernandez@example.com",

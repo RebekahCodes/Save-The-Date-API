@@ -1,14 +1,16 @@
-//Import the required modules
-import express from "express";
-//Initialose the express app
-const app = express();
-//import dotenv so I can securly store the connection string in the .env file and reference it below.
 import dotenv from "dotenv";
 dotenv.config();
+
+import express from "express"; //Import the required modules
+import cors from "cors"; // Import the cors package
+const app = express(); //Initialose the express app
+//import dotenv so I can securly store the connection string in the .env file and reference it below.
+
 //Retrieve the port number from environment variables
 const PORT = process.env.PORT;
-// use express.joson() middleware to parse incoming JSON requests
-app.use(express.json());
+
+app.use(express.json()); // use express.joson() middleware to parse incoming JSON requests
+app.use(cors({ origin: "http://localhost:3000" })); //Allow request coming in from my front end React app which is on local host 3000
 
 //Import helper functions
 import { getGuests } from "./src/routes/getGuests.js";
@@ -25,9 +27,11 @@ app.get("/guests/", async function (req, res) {
 //Endpoint to create a new guest
 app.post("/guests/", async function (req, res) {
   //define the arguement- what is guest? it will be the object created when the user fills in and submits the form
-  const guest = req.body;
+  const guestDataJson = req.body;
+  console.log(guestDataJson);
   //call the helper function you want
-  const newGuest = await addGuest(guest);
+  const newGuest = await addGuest(guestDataJson);
+  console.log(guestDataJson);
   //return the response
   res.status(201).json({ status: "success", payload: newGuest });
 });
