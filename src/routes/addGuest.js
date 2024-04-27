@@ -11,7 +11,7 @@ export async function addGuest(guestDataJson) {
   try {
     // Initialize an array to store the inserted guests
     const guestsToAdd = [];
-
+    const householdId = crypto.randomUUID({ type: "v4" }); // Generate UUID for the household id using crypto.
     // Iterate over each guest object in the array
     for (const guest of guestDataJson) {
       // SQL Query to insert a new guest
@@ -31,7 +31,6 @@ export async function addGuest(guestDataJson) {
         RETURNING *;
       `;
 
-      const householdId = crypto.randomUUID({ type: "v4" }); // Generate UUID for the household id using crypto.
       //Send the query to the database
       const response = await pool.query(queryText, [
         householdId,
