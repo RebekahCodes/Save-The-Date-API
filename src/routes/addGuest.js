@@ -51,7 +51,6 @@ export async function addGuest(guestDataJson) {
     return guestsToAdd;
   } catch (error) {
     console.error("Error adding guest:", error);
-
     // Handle the error
     throw new Error("Error adding guest to database");
   }
