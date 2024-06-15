@@ -6,7 +6,7 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0; // Disables SSL certificate ver
 export const pool = new pg.Pool({
   // Pass the connection string to the pool
   connectionString,
-  ssl: true,
+  ssl: true, //Try deleting once deployed
 });
 
 export default pool;

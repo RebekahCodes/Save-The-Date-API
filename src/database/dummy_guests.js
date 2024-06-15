@@ -1,5 +1,4 @@
 import { pool } from "./pool.js";
-
 import crypto from "crypto";
 
 async function seedGuests() {
