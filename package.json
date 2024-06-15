@@ -14,10 +14,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "dotenv": "^16.4.5",
     "pg": "^8.11.5"
   },
   "devDependencies": {
-    "dotenv": "^16.4.5",
     "vitest": "^1.5.2"
   }
 }
