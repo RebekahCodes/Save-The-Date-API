@@ -10,7 +10,11 @@ const app = express(); //Initialose the express app
 const PORT = process.env.PORT;
 
 app.use(express.json()); // use express.joson() middleware to parse incoming JSON requests
-app.use(cors({ origin: "https://project-std.vercel.app" })); //Allow request coming in from my front end React app which is deployed on vercel
+app.use(cors({
+  origin: "https://project-std.vercel.app", // Allow requests from your front end
+  methods: ["GET", "POST"], // Add the HTTP methods your server supports
+  allowedHeaders: ["Content-Type"], // Add headers you want to allow
+}));
 
 //Import helper functions
 import { getGuests } from "./src/routes/getGuests.js";
