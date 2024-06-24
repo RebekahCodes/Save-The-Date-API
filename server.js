@@ -1,20 +1,23 @@
-import dotenv from "dotenv";
-dotenv.config();
-
 import express from "express"; //Import the required modules
 import cors from "cors"; // Import the cors package
+import dotenv from "dotenv";
+
+dotenv.config();
+
+
+
 const app = express(); //Initialose the express app
 //import dotenv so I can securly store the connection string in the .env file and reference it below.
-
 //Retrieve the port number from environment variables
 const PORT = process.env.PORT;
 
-app.use(express.json()); // use express.joson() middleware to parse incoming JSON requests
+
 app.use(cors({
-  origin: "https://project-12pqb49ii-rebekah-andersons-projects.vercel.app", // Allow requests from your front end
+  origin: "https://project-std.vercel.app/", // Allow requests from your front end
   // methods: ["GET", "POST"], // Add the HTTP methods your server supports
   // allowedHeaders: ["Content-Type"], // Add headers you want to allow
 }));
+app.use(express.json()); // use express.joson() middleware to parse incoming JSON requests
 
 //Import helper functions
 import { getGuests } from "./src/routes/getGuests.js";
