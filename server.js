@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 
 app.use(express.json()); // use express.joson() middleware to parse incoming JSON requests
 app.use(cors({
-  origin: "https://project-std.vercel.app", // Allow requests from your front end
+  origin: "https://project-12pqb49ii-rebekah-andersons-projects.vercel.app", // Allow requests from your front end
   methods: ["GET", "POST"], // Add the HTTP methods your server supports
   allowedHeaders: ["Content-Type"], // Add headers you want to allow
 }));
