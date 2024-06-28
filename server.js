@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 
 app.use(express.json()); // use express.joson() middleware to parse incoming JSON requests
 const corsOptions = {
-  origin: ['https://www.beckyandgerrone.com', 'https://project-12pqb49ii-rebekah-andersons-projects.vercel.app']
+  origin: ['https://www.beckyandgerrone.com']
 };
 app.use(cors(corsOptions)); //Allow request coming in from my front end React app which is deployed on vercel
 
