@@ -13,7 +13,7 @@ const PORT = process.env.PORT;
 
 
 app.use(cors({
-  origin: ['https://www.beckyandgerrone.com', "https://project-12pqb49ii-rebekah-andersons-projects.vercel.app"], // Allow requests from your front end
+  origin: "https://project-12pqb49ii-rebekah-andersons-projects.vercel.app" // Allow requests from your front end
 }));
 app.use(express.json()); // use express.joson() middleware to parse incoming JSON requests
 
