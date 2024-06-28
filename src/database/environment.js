@@ -8,11 +8,6 @@ const envPath = path.resolve(process.cwd(), `.env.${env}`);
 // Load environment variables from the appropriate .env file
 dotenv.config({ path: envPath });
 
-// Debugging logs
-console.log(`Environment: ${env}`);
-console.log(`Loading environment variables from: ${envPath}`);
-console.log("Loaded environment variables:", process.env);
-
 
 // Retrieve the database connection string from environment variables
 const connectionString = process.env.DATABASE_URL;
