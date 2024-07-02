@@ -50,3 +50,28 @@ Clone the project
 
 ```bash
   git clone https://github.com/RebekahCodes/Save-The-Date-API.git
+```
+ Go to the project directory
+
+```bash
+  cd Save-The-Date-API
+```
+ Install dependencies
+
+```bash
+  npm install
+```
+
+Set up your environment variables by creating a .env file in the root directory and add the following:
+
+```makefile
+
+PORT=<your_port_number>
+DATABASE_URL=<your_postgres_connection_string>
+```
+Start the server
+
+```bash
+Copy code
+  npm run start
+```
