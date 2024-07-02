@@ -10,8 +10,12 @@ const app = express(); //Initialose the express app
 const PORT = process.env.PORT;
 
 app.use(express.json()); // use express.joson() middleware to parse incoming JSON requests
+
+// Retrieve allowed origins from environment variables and split into an array
+const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
+
 const corsOptions = {
-  origin: ['https://www.beckyandgerrone.com',"https://project-std.vercel.app", 'https://project-12pqb49ii-rebekah-andersons-projects.vercel.app', "http://localhost:3000"]
+  origin: allowedOrigins
 };
 app.use(cors(corsOptions)); //Allow request coming in from my front end React app which is deployed on vercel
 
